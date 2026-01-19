@@ -1,5 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import { Box, Button, Paper } from "@mui/material";
+import {
+  Box,
+  Button,
+  Paper,
+  TextField,
+  Typography,
+  Link,
+} from "@mui/material";
 import { keyframes } from "@mui/system";
 import capnexisLogo from "../assets/logo/capnexis-logo.png";
 
@@ -37,7 +44,7 @@ function Login() {
             "url(https://images.unsplash.com/photo-1501183638710-841dd1904471)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(20px)",
+          filter: "blur(18px)",
           transform: "scale(1.1)",
           zIndex: 1,
         }}
@@ -63,73 +70,83 @@ function Login() {
         zIndex={3}
       >
         <Paper
-          elevation={8}
+          elevation={10}
           sx={{
             p: 4,
             width: 420,
             borderRadius: 4,
             backdropFilter: "blur(10px)",
             background:
-              "linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85))",
+              "linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.85))",
             animation: `${fadeUp} 0.8s ease-out`,
           }}
         >
-          {/* LOGO ONLY (BIGGER) */}
+          {/* LOGO */}
           <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            mb={4}
-          >
-            <img
-              src={capnexisLogo}
-              alt="Capnexis Logo"
-              style={{
-                height: 120,   // 👈 BIG & CLEAR
-                maxWidth: "100%",
-                objectFit: "contain",
-              }}
-            />
+  display="flex"
+  justifyContent="center"
+  mb={0}
+>
+  <img
+    src={capnexisLogo}
+    alt="Capnexis Logo"
+    style={{
+      height: 200,   // 🔥 reduced from 200
+      objectFit: "contain",
+    }}
+  />
+</Box>
+
+<Typography
+  align="center"
+  color="text.secondary"
+  fontSize="0.9rem"
+  sx={{
+    mt: "-28px",   // 🔥 THIS fixes the gap
+    mb: 1.5,
+  }}
+>
+  Secure Governance Platform
+</Typography>
+
+
+
+          <TextField
+            fullWidth
+            label="Username / Email / Mobile"
+            margin="normal"
+          />
+
+          <TextField
+            fullWidth
+            label="Password"
+            type="password"
+            margin="normal"
+          />
+
+          <Box display="flex" justifyContent="flex-end" mt={1}>
+            <Link underline="hover" sx={{ cursor: "pointer" }}>
+              Forgot Password?
+            </Link>
           </Box>
 
           <Button
             fullWidth
             size="large"
             variant="contained"
-            sx={{ mb: 2 }}
-            onClick={() => navigate("/customer")}
+            sx={{ mt: 3 }}
+            onClick={() => navigate("/governance")}
           >
-            Customer
+            Sign In
           </Button>
 
           <Button
             fullWidth
             size="large"
             variant="outlined"
-            sx={{ mb: 2 }}
-            onClick={() => navigate("/engineer")}
+            sx={{ mt: 2 }}
           >
-            Site Engineer
-          </Button>
-
-          <Button
-            fullWidth
-            size="large"
-            variant="outlined"
-            sx={{ mb: 2 }}
-            onClick={() => navigate("/finance")}
-          >
-            Finance Team
-          </Button>
-
-          <Button
-            fullWidth
-            size="large"
-            variant="outlined"
-            color="secondary"
-            onClick={() => navigate("/management")}
-          >
-            Management / Board
+            Register
           </Button>
         </Paper>
       </Box>
