@@ -5,7 +5,7 @@ import CustomerDashboard from "./pages/customer/CustomerDashboard";
 import EngineerDashboard from "./pages/engineer/EngineerDashboard";
 import FinanceDashboard from "./pages/finance/FinanceDashboard";
 import EnterpriseGovernance from "./pages/enterprise/EnterpriseGovernance";
-
+import EnterpriseExecutiveDashboard from "./pages/enterprise/EnterpriseExecutiveDashboard";
 
 function App() {
   return (
@@ -16,7 +16,10 @@ function App() {
       <Route path="/engineer" element={<EngineerDashboard />} />
       <Route path="/finance" element={<FinanceDashboard />} />
       <Route path="/enterprise" element={<EnterpriseGovernance />} />
-
+      <Route
+        path="/enterprise-dashboard"
+        element={<EnterpriseExecutiveDashboard />}
+      />
     </Routes>
   );
 }

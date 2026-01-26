@@ -1,19 +1,26 @@
 import { Box, Typography, Paper } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
+/* ===== ICONS ===== */
+import DashboardIcon from "@mui/icons-material/Dashboard";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 
-/* 🔹 LOGO IMPORT */
+/* ===== LOGO ===== */
 import capnexisLogo from "../../assets/logo/capnexis-logo.png";
 
 function GovernanceHub() {
   const navigate = useNavigate();
 
   const tiles = [
+    {
+      title: "Enterprise Executive Dashboard",
+      icon: <DashboardIcon sx={{ fontSize: 36, color: "#4CAF50" }} />,
+      path: "/enterprise-dashboard",
+    },
     {
       title: "Enterprise Level Governance",
       icon: <ApartmentIcon sx={{ fontSize: 36, color: "#4CAF50" }} />,
@@ -54,9 +61,7 @@ function GovernanceHub() {
           position: "relative",
         }}
       >
-
-
-        {/* 🔹 OVERLAY */}
+        {/* OVERLAY */}
         <Box
           sx={{
             position: "absolute",
@@ -66,7 +71,7 @@ function GovernanceHub() {
           }}
         />
 
-        {/* 🔹 CENTER LOGO (MAIN BRAND) */}
+        {/* LOGO */}
         <Box
           sx={{
             position: "relative",
@@ -80,7 +85,7 @@ function GovernanceHub() {
             src={capnexisLogo}
             alt="Capnexis"
             style={{
-              height: 250,          // 🔥 bigger size
+              height: 250,
               objectFit: "contain",
               filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.4))",
             }}
@@ -136,7 +141,7 @@ function GovernanceHub() {
                 <Typography
                   align="center"
                   fontSize="0.9rem"
-                  fontWeight={500}
+                  fontWeight={600}
                 >
                   {tile.title}
                 </Typography>
